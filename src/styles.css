@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-image: url(./img/lakeside-evening-deer-minimal-art-landscape-scenic-panorama-7680x3215-4585.jpg);
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+
+/* Set common styles for user-info and game-info */
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  position: static;
+  color: #333;
+}
+
+.user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+}
+
+.time-remaining, .game-description {
+  color: #333;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.game-description {
+  margin-top: 50px;
+  color: whitesmoke !important;
+}
+
+/* Center align time-remaining and new-game-button */
+.new-game-button {
+  text-align: center;
+  margin-top: 20px; /* Add some spacing */
+}
+
+/* Increase spacing between user-info elements */
+.user-info p {
+  margin: 0 10px;
+}
+
+/* Separate 'Time remaining' and 'New Game' button */
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; /* Add spacing between the elements */
+}
+
+
+.new-game-button {
+  font-size: 20px;
+}
+
+.guess-button {
+  font-size: 18px;
+}
+
+.registration-form button {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.guess-button,
+.new-game-button {
+  padding: 10px 20px 10px 20px;
+}
+
+/* Set common styles for buttons */
+.registration-form button,
+.guess-button,
+.new-game-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto Mono';
+}
+
+.landing-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.registration-form button:hover,
+.guess-button:hover,
+.landing-button:hover,
+.new-game-button:hover {
+  background-color: #444; /* Darken the color on hover */
+}
+
+.registration-form-input {
+  margin-top: 10px;
+}
+
+/* Set common styles for form elements */
+.registration-form-input,
+.submit-guess {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Roboto Mono';
+}
+
+/* Set background and font for the entire app */
+body {
+  font-family: 'Roboto Mono';
+  /*background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/4584.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  overflow: scroll;*/
+}
+
+/* Style landing page */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.landing-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Style game container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.user-info {
+  z-index: 200;
+  color: whitesmoke;
+}
+
+/* Style registration page */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px; /* Add some margin at the top for spacing */
+  padding: 20px; /* Add some padding to the form container */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  width: 400px; /* Set a fixed width for the form container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.registration-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; /* Make sure the form takes the full width */
+}
+
+.registration-form label {
+  font-size: 16px;
+}
+
+.registration-error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Style the high score text */
+.high-score {
+  margin: 0;
+}
+
+.current-score {
+  margin-bottom: 10px;
+}
+
+.submit-guess {
+  margin-bottom: 10px;
+  font-family: 'Roboto Mono';
+}
+
+/* Adjust spacing around game-content */
+.game-content {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  /*position: absolute;*/
+  margin-top: 55px;
+}
+
+/* Style ScoreTable for better readability */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* Adjust font size and color for table header */
+table th {
+  font-size: 18px;
+  background-color: #f0f0f0;
+}
+
+/* Add more space between table rows */
+table tbody tr {
+  background-color: #f8f8f8;
+}
+
+/* Style ScoreTable cells */
+table tbody td {
+  font-size: 16px;
+}
+
+.table-container {
+  overflow: scroll;
+}
+
+
+
+@media only screen and (width: 1536px) {
+  html {
+    background-image: url(https://4kwallpapers.com/images/walls/thumbs_3t/4585.png);
+  }
+}
+
+/* Add styles for Leaderboard */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-family: 'Roboto Mono';
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* Style the table header */
+table th {
+  font-size: 18px;
+  background-color: #f0f0f0;
+}
+
+/* Style table rows */
+table tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+table tbody td {
+  font-size: 16px;
+}
+
+/* Apply styles to input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Roboto Mono';
+}
+
+/* Add margin to input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-top: 10px;
+}
+
+
+#guess-btn {
+  margin-top: 10px;
+}
+
+.leaderboard {
+  display: flex;
+  justify-content: center;
+}
+
+.leaderboard .game-content {
+  width: 45%;
+  position: static;
+}
+
+#game-fixed {
+  position: sticky;
+  top: 0;
+}
+
+/* Update the styles for the navigation bar */
+nav {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 65px;
+}
+
+/* Add a separate class for the game link */
+.game-link {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  width: auto;
+  position: relative;
+  float: none;
+
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-greeting {
+  float: right;
+}
